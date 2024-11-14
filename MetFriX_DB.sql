@@ -35,7 +35,7 @@ CREATE TABLE Reviews (
     Username VARCHAR(30),
     MovieID INT,
     Reviews VARCHAR(255),
-    Rating INT,
+    Rating CHAR(2),
     PRIMARY KEY (Username, MovieID),
     FOREIGN KEY (Username) References Users (Username),
     FOREIGN KEY (MovieID) References Movies (MovieID)

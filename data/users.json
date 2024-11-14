@@ -1,0 +1,36 @@
+{
+    "profiles": [
+        {
+            "name": "Nathan Keller",
+            "username": "Saúl",
+            "password": "diethylpropane",
+            "dateofaccountcreation": "04/23/2024",
+            "bio": "Second Year Mechanical Engineering Student, Love Romantic Movies",
+            "avatar": "https://occ-0-2430-2433.1.nflxso.net/dnm/api/v6/vN7bi_My87NPKvsBoib006Llxzg/AAAABfnZLmfujuhA1nXtX4UoO77cH0CJNAFRN7-s4R92qiPUQqUgHh_Q_YscfkNEZNVc_0UAyoytd8gY4USUO7VSbKB0Zl806PdA3J6F.png?r=f4c"
+        },
+        {
+            "name": "Stacy Roberts",
+            "username": "Primeagen",
+            "password": "redoxreaction14",
+            "dateofaccountcreation": "02/2/2017",
+            "bio": "Love Action Movies. Let's connect",
+            "avatar": "https://occ-0-2430-2433.1.nflxso.net/dnm/api/v6/vN7bi_My87NPKvsBoib006Llxzg/AAAABUA9QLiVGC4PuLGarV3oGLJhrOoIewsw54mdcsVtROUf1TRm69Wzoio5Ml2Vc09n4_MvJMUpo_FzjkVbnPBrFaZLHcKVgTt9lcBZ.png?r=508"
+        },
+        {
+            "name": "Anacio Gonzalez",
+            "username": "Daisy",
+            "password": "ferrouscyanide",
+            "dateofaccountcreation": "12/1/2016",
+            "bio": "Anime God",
+            "avatar": "https://occ-0-2430-2433.1.nflxso.net/dnm/api/v6/vN7bi_My87NPKvsBoib006Llxzg/AAAABZumJ3wvSKM7od-r3UjhVF9j3yteWlQYA-51F3SNoI682llhul1Xf_CUkMnfP_17Md2lpOOhbwHeGufvo8kOTjptoS_bcwtniHKz.png?r=e6e"
+        },
+        {
+            "name": "Fabricio Romano",
+            "username": "Alchemist",
+            "password": "technicaltechnocrat",
+            "dateofaccountcreation": "07/18/2021",
+            "bio": "SciFi, Action, Horror. Let's Connect",
+            "avatar": "https://occ-0-2430-2433.1.nflxso.net/dnm/api/v6/vN7bi_My87NPKvsBoib006Llxzg/AAAABfBs_RmrXu6XN02hkLZzUgrqSOMFIx6LUk_-T4dG4Vgr7rwnmYyejpUUebFqmVDbnrwxESqJu6ml0q-G6KQVzRqKA42KmNEPkDmn.png?r=f55"
+        }
+    ]
+}
