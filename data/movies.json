@@ -6,7 +6,7 @@
                 {
                     "movieid": "1",
                     "movie_image_cover": "https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQXlHfX_1WN1bSiZv4jXieBsZbXRLNIUU9BPzv0Cohep2F2pmqrMzmWwRp7anXyBLRGhrBKMOuoAZoj9v8Si3-mJ6o2-5bc6o2YZtsJSIgpOiM4gcLAETYcGsppaorpaRaXWzgZBX5ftLz-15gi1mBNcD.jpg?r=77f",
-                    "title": "Dead Cells: Netflix Edition",
+                    "title": "Dead Cells: MetFriX Edition",
                     "genre": "Action"
                     
 
@@ -256,7 +256,7 @@
             ]
         },
         {
-            "rowTitle": "New on Netflix",
+            "rowTitle": "New on MetFriX",
             "movies": [
                 {
                     "movieid": "81681817",
@@ -654,7 +654,7 @@
                 },
                 {
                     "movieid": "81157729",
-                    "movie_image_cover": "https://www.whats-on-netflix.com/wp-content/uploads/covers-2024/dontcomehome.jpeg",
+                    "movie_image_cover": "https://www.whats-on-MetFriX.com/wp-content/uploads/covers-2024/dontcomehome.jpeg",
                     "title": "The Woman in the Window"
                 },
                 {
@@ -855,7 +855,7 @@
             ]
         },
         {
-            "rowTitle": "Only On Netflix",
+            "rowTitle": "Only On MetFriX",
             "movies": [
                 {
                     "movieid": "81157729",
