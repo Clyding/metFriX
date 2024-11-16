@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8" lang="English">
+    <title>MetFriX</title>
+    <link rel="stylesheet" src="/styles/styles.css">
+    <link rel="shortcut icon" src="/images/MFriX.png">
+    <head>
+        <div class="header">
+            <script src="/scripts/scripts.js"></script>
+            <nav>
+                <img src="/images/MetFriX.png" class="logo" />
+                <div>
+                    <button class="language-btn">
+                        English <img src="/images/down-icon.png" alt="" />
+                    </button>
+                </div>
+            </nav>
+            <div class="sign-in-container">
+                <form class="sign-in-form">
+                  <h1>Sign In</h1>
+                  <div class="input-container">
+                    <input type="email" placeholder="Email or Mobile Number" required />
+                    <input type="password" placeholder="Password" required />
+                  </div>
+                  <button role="button" id="signed-in" type="submit">Sign In</button>
+                  <script>
+                    document.getElementById("signed-in").onclick = function () {
+                      window.location.href = "movies.html";
+                    };
+                  </script>
+                  <div class="extra-links">
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                    <p class="new-to">New to MetFriX? <a href="index.html">Sign Up Now</a></p>
+                  </div>
+                </form>
+            </div>  
+        </div>
+        
+    </head>
+    <script>
+        load("footer.html");
+        function load(url) 
+        {
+            req = new XMLHttpRequest ();
+            req.open("GET", url, false);
+            req.send(null);
+            document.getElementById(4).innerHTML = req.responseText;
+        }
+
+    </script>
+</html>
