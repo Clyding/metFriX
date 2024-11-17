@@ -1,0 +1,15 @@
+{
+  "name": "metfrix",
+  "version": "1.0.0",
+  "description": "**MetFriX**\r  MetFriX is a Project for COSC 459, Database Systems. It is a NetFlix-like clone",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mysql": "^2.18.1"
+  }
+}
