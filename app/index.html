@@ -170,7 +170,12 @@
 </small>
 <form class="email-signup">
     <input type="email" placeholder="Email Address" />
-    <button type="submit">Get Started</button>
+    <button id="sign-up" type="submit">Get Started</button>
+    <script>
+      document.getElementById("sign-up").onclick = function () {
+        window.location.href="movies.html";
+      }
+    </script>
   </form>
     </div>
   </body>

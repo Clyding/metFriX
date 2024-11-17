@@ -8,6 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const emailInput = form.querySelector("input[type='email']");
         const email = emailInput.value.trim();
         if (isValidEmail(email)) {
+          document.getElementById("sign-up").onclick = function (){
+            window.location.href="movies.html";}
           alert("Thank you for signing up!");
           emailInput.value = ""; // Clear input field
         } else {
