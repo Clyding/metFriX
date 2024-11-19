@@ -62,3 +62,6 @@ CREATE TABLE ActorOrDirectorMovieList (
 );
 
 SHOW TABLES;
+select MovieID 
+from metfrix.movieswatched 
+where `MovieID` = 'Movies'

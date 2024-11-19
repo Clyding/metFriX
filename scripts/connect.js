@@ -8,6 +8,8 @@ let connection = mysql.createConnection({
     port: process.env.DB_PORT
 })
 
+module.exports = pool.promise(); 
+
 connection.connect((err) => {
     if (err) return console.error(err.message);
   

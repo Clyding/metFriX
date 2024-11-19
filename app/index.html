@@ -9,6 +9,21 @@
     </head>
     <body>
         <script src="/scripts/scripts.js"></script>
+        <script>
+          async function fetchMovies() {
+            const response = await fetch('http://localhost:3000/movies');
+            const movies = await response.json();
+      
+            const moviesDiv = document.getElementById('movies');
+            movies.forEach(movie => {
+              const movieElement = document.createElement('div');
+              movieElement.textContent = `${movie.Title} (${movie.Year}) - ${movie.Genre}`;
+              moviesDiv.appendChild(movieElement);
+            });
+          }
+      
+          fetchMovies();
+        </script>
         <div class="header">
         <!-------------------        NavBar     -------------->
         <nav>
