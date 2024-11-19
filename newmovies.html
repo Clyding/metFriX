@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MetFriX - Movies</title>
+    <style>
+        /* Basic Reset */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #141414;
+            color: #fff;
+        }
+
+        /* Header Styles */
+        .header {
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: black;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .logo {
+            height: 50px;
+        }
+
+        /* Section Styles */
+        .movies-section {
+            padding: 20px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .movies-row {
+            display: flex;
+            overflow-x: auto;
+            gap: 10px;
+            padding-bottom: 10px;
+        }
+
+        .movies-row::-webkit-scrollbar {
+            display: none;
+        }
+
+        .movie-card {
+            flex: 0 0 auto;
+            width: 200px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .movie-card:hover {
+            transform: scale(1.1);
+        }
+
+        .movie-card img {
+            width: 100%;
+            height: 300px;
+            border-radius: 5px;
+            object-fit: cover;
+        }
+
+        .movie-title {
+            font-size: 1rem;
+            margin-top: 5px;
+            text-align: center;
+        }
+
+        .movie-card video {
+            margin-top: 10px;
+            width: 100%;
+            border-radius: 5px;
+        }
+        /* Description Overlay */
+        .description-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            border-radius: 5px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            padding: 10px;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        .movie-card:hover .description-overlay {
+            opacity: 1;
+        }
+        .logo {
+            height: 50px;
+        }
+
+        .profile-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .profile {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .profile img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <img src="/images/MetFriX.png" alt="Netflix Logo" class="logo">
+        <div class="profile"></div>
+        <img src="/images/michael.jpg" alt="UserProfile" class="profile">
+    </div>
+
+    <!-- Movies Sections -->
+    <div id="movies-container" ></div>
+
+    <script>
+      const moviesData = {
+    "movies": [
+        {
+            "rowTitle": "Movies",
+            "movies": [
+                {
+                    "movieid": "81773534",
+                    "movie_image_cover": "https://resizing.flixster.com/Dz6J1iPXCauKGnfcOIBwTPS_PGo=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p25443430_v_v13_af.jpg",
+                    "title": "T.I.M",
+                    "genre": "Horror"
+                },
+                {
+                    "movieid": "81681817",
+                    "movie_image_cover": "https://occ-0-1175-299.1.nflxso.net/dnm/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABZluAolekEH4h1By3Std8dcNk8JovnP34H6kSYJ4BPChXbH2-hOqhMtqsu5DBiR5vshilHH6FdA8K5n8n0ZIiOiWhkHbX8Spl-LlW7EwHc8GiU5UQz5LBeUl6SkUOZtS-qhllDJg6T2vbcW-GjrzgixhwH4riuh4nssRAqVbIbNK0FpoU8C8pG_Xox26ItqZivERjc11PwrFqt-APPboT20i0BGR6ofbPdvV9lBHHrUBs_lv7Xq6OLb5-JpRxoLbmOaa6dIQX16sBD0XZujQ3hWxtXFypAnjo20uC-dtfJ9pk0tToI0FFYU0Pg.jpg",
+                    "title": "The After",
+                    "genre": "Thriller"
+                },
+                {
+                    "movieid": "123",
+                    "movie_image_cover": "https://m.media-amazon.com/images/I/61y3DfBfGdL._AC_UF894,1000_QL80_.jpg",
+                    "videoUrl": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+                    "title": "Oppenheimer",
+                    "year": "2023",
+                    "duration": "3h 0m",
+                    "rating": "R",
+                    "description": "The story of American scientist J. Robert Oppenheimer and his role in the development of the atomic bomb. Based on the Pulitzer Prize-winning book \"American Prometheus\".",
+                    "cast": [
+                        "Cillian Murphy",
+                        "Emily Blunt",
+                        "Matt Damon",
+                        "Robert Downey Jr."
+                    ],
+                    "director": "Christopher Nolan",
+                    "ranking_text": "#1 in Movies Today"
+                },
+                {
+                    "movieid": "81767564",
+                    "movie_image_cover": "https://digitalt.tv/wp-content/uploads/imports/Dont-Move.jpg",
+                    "title": "Don't Move",
+                    "videoUrl": "http://commondatastorage.googleapis.com/gtv-vmovieideos-bucket/sample/ForBiggerFun.mp4",
+                    "year": "2024",
+                    "duration": "1h 32m",
+                    "rating": "TV-MA",
+                    "description": "How do you escape a twisted killer when you suddenly can't run or scream? Kelsey Asbille (\"Yellowstone\") and Finn Wittrock star in this chilling thriller.",
+                    "cast": [
+                        "Finn Wittrock",
+                        "Kelsey Asbille",
+                        "Moray Treadwell"
+                    ],
+                    "director": "Adam Schindler, Brian Netto",
+                    "ranking_text": "#4 in Movies Today"
+                },
+                {
+                    "movieid": "817",
+                    "movie_image_cover": "/images/matrix.jpg",
+                    "title": "The After",
+                    "genre": "Thriller"
+                },
+                {
+                    "movieid": "80192098",
+                    "movie_image_cover": "https://occ-0-7-6.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABfuBxwODJWGpnxkkB_o4u6261-94UU3qXviCR10RUPHt_t2aUmLdxZSf9Ya1QPVE-RSGPIFap0ktl5E9IzJCdmOleGJlBtkgbJ9w5m7dY_HIg34-vtCLyJn7oD0YolAl8jOJ.jpg?r=8a4",
+                    "title": "moneyHeist",
+                    "genre": "Thriller"
+
+                },  
+            ]
+        }
+    ]
+};
+
+const container = document.getElementById("movies-container");
+
+moviesData.movies.forEach(section => {
+    const sectionDiv = document.createElement("div");
+    sectionDiv.classList.add("movies-section");
+
+    const sectionTitle = document.createElement("h2");
+    sectionTitle.classList.add("section-title");
+    sectionTitle.textContent = section.rowTitle;
+
+    const moviesRow = document.createElement("div");
+    moviesRow.classList.add("movies-row");
+
+    section.movies.forEach(movie => {
+        const movieCard = document.createElement("div");
+        movieCard.classList.add("movie-card");
+
+        // Add a link wrapped around the image with a unique URL
+        const link = document.createElement("a");
+
+        // Assign unique URLs for each movie
+        if (movie.movieid === "81773534") {
+            link.href = "T.I.M.html";
+        } else if (movie.movieid === "81681817") {
+            link.href = "After.html";
+        } else if (movie.movieid === "123") {
+            link.href = "Oppenheimer.html";
+        } else if (movie.movieid === "81767564") {
+            link.href = "Dontmove.html";
+        } else if (movie.movieid === "817") {
+            link.href = "matrix.html";
+        }else if (movie.movieid === "80192098") {
+            link.href = "moneyheist.html";
+        }else {
+            link.href = `default.html?id=${movie.movieid}`;
+        }
+
+        const img = document.createElement("img");
+        img.src = movie.movie_image_cover;
+        img.alt = movie.title;
+
+        link.appendChild(img);
+        movieCard.appendChild(link);
+
+        moviesRow.appendChild(movieCard);
+    });
+
+    sectionDiv.appendChild(sectionTitle);
+    sectionDiv.appendChild(moviesRow);
+    container.appendChild(sectionDiv);
+});
+  </script>
+</body>
+</html>
