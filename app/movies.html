@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MetFriX - Movies</title>
+    <title>MetFriX | Movies</title>
     <style>
         /* Basic Reset */
         body {
@@ -27,6 +27,19 @@
 
         .logo {
             height: 50px;
+        }
+
+        .profile {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .profile img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         /* Section Styles */
@@ -74,11 +87,6 @@
             text-align: center;
         }
 
-        .movie-card video {
-            margin-top: 10px;
-            width: 100%;
-            border-radius: 5px;
-        }
         /* Description Overlay */
         .description-overlay {
             position: absolute;
@@ -97,33 +105,10 @@
             transition: opacity 0.3s ease;
             padding: 10px;
             box-sizing: border-box;
-            overflow: hidden;
         }
 
         .movie-card:hover .description-overlay {
             opacity: 1;
-        }
-        .logo {
-            height: 50px;
-        }
-
-        .profile-container {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .profile {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            overflow: hidden;
-        }
-
-        .profile img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
         }
     </style>
 </head>
@@ -131,12 +116,13 @@
     <!-- Header -->
     <div class="header">
         <img src="/images/MetFriX.png" alt="MetFriX Logo" class="logo">
-        <div class="profile"></div>
-        <img src="/images/michael.jpg" alt="UserProfile" class="profile">
+        <div class="profile">
+            <img src="/images/michael.jpg" alt="UserProfile">
+        </div>
     </div>
 
     <!-- Movies Sections -->
-    <div id="movies-container" ></div>
+    <div id="movies-container"></div>
 
     <script>
         const moviesData = {
@@ -146,14 +132,14 @@
                     "movies": [
                         {
                             "movieid": "1",
-                            "movie_image_cover": "https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQXlHfX_1WN1bSiZv4jXieBsZbXRLNIUU9BPzv0Cohep2F2pmqrMzmWwRp7anXyBLRGhrBKMOuoAZoj9v8Si3-mJ6o2-5bc6o2YZtsJSIgpOiM4gcLAETYcGsppaorpaRaXWzgZBX5ftLz-15gi1mBNcD.jpg?r=77f",
-                            "title": "Dead Cells: MetFriX Edition",
+                            "movie_image_cover": "https://occ-0-7-6.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABfuBxwODJWGpnxkkB_o4u6261-94UU3qXviCR10RUPHt_t2aUmLdxZSf9Ya1QPVE-RSGPIFap0ktl5E9IzJCdmOleGJlBtkgbJ9w5m7dY_HIg34-vtCLyJn7oD0YolAl8jOJ.jpg?r=8a4",
+                            "title": "Money Heist: MetFriX Edition",
                             "genre": "Action"
                         },
                         {
                             "movieid": "2",
-                            "movie_image_cover": "https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQcIeF6n2wF0YVb_qZZQnxFsky2xLQEGMq1zxnK5EbjY-3tJVS8YOOdYUzRvrEgBH1NV_Nw761AOTWdfs3vPFpBpjNnpwA148Tj-l4q3e_cCXRoRxMTM17W9t2VsY7QS7M3nTyUB9vbeRZnurR5q4oREQ.jpg?r=af2",
-                            "title": "Bowling Ballers",
+                            "movie_image_cover": "https://www.lifewire.com/thmb/juF1nTle4iPAlr05-aYQrAksBdE=/2000x1000/filters:fill(auto,1)/The-Matrix-poster-green-e9adbab5a1fc4d5da7a752e961dc9ec7.jpg",
+                            "title": "The Matrix",
                             "genre": "Arcade"
                         },
                         {
@@ -205,15 +191,15 @@
                         },
                         {
                             "movieid": "7",
-                            "movie_image_cover": "/images/matrix.jpg",
-                            "title": "The After",
-                            "genre": "Thriller"
+                            "movie_image_cover": "https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQXlHfX_1WN1bSiZv4jXieBsZbXRLNIUU9BPzv0Cohep2F2pmqrMzmWwRp7anXyBLRGhrBKMOuoAZoj9v8Si3-mJ6o2-5bc6o2YZtsJSIgpOiM4gcLAETYcGsppaorpaRaXWzgZBX5ftLz-15gi1mBNcD.jpg?r=77f",
+                            "title": "Dead Cells: MetFriX Edition",
+                            "genre": "Action"
                         },
                         {
                             "movieid": "8",
-                            "movie_image_cover": "https://occ-0-7-6.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABfuBxwODJWGpnxkkB_o4u6261-94UU3qXviCR10RUPHt_t2aUmLdxZSf9Ya1QPVE-RSGPIFap0ktl5E9IzJCdmOleGJlBtkgbJ9w5m7dY_HIg34-vtCLyJn7oD0YolAl8jOJ.jpg?r=8a4",
-                            "title": "moneyHeist",
-                            "genre": "Thriller"
+                            "movie_image_cover": "https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQcIeF6n2wF0YVb_qZZQnxFsky2xLQEGMq1zxnK5EbjY-3tJVS8YOOdYUzRvrEgBH1NV_Nw761AOTWdfs3vPFpBpjNnpwA148Tj-l4q3e_cCXRoRxMTM17W9t2VsY7QS7M3nTyUB9vbeRZnurR5q4oREQ.jpg?r=af2",
+                            "title": "Bowling Ballers",
+                            "genre": "Arcade"
 
                         },  
 
@@ -224,53 +210,50 @@
 
         const container = document.getElementById("movies-container");
 
-moviesData.movies.forEach(section => {
-    const sectionDiv = document.createElement("div");
-    sectionDiv.classList.add("movies-section");
+        moviesData.movies.forEach(section => {
+            const sectionDiv = document.createElement("div");
+            sectionDiv.classList.add("movies-section");
 
-    const sectionTitle = document.createElement("h2");
-    sectionTitle.classList.add("section-title");
-    sectionTitle.textContent = section.rowTitle;
+            const sectionTitle = document.createElement("h2");
+            sectionTitle.classList.add("section-title");
+            sectionTitle.textContent = section.rowTitle;
 
-    const moviesRow = document.createElement("div");
-    moviesRow.classList.add("movies-row");
+            const moviesRow = document.createElement("div");
+            moviesRow.classList.add("movies-row");
 
-    section.movies.forEach(movie => {
-        const movieCard = document.createElement("div");
-        movieCard.classList.add("movie-card");
+            section.movies.forEach(movie => {
+                const movieCard = document.createElement("div");
+                movieCard.classList.add("movie-card");
 
-        // Add movie image and title
-        movieCard.innerHTML = `
-            <img src="${movie.movie_image_cover}" alt="${movie.title}">
-            <p class="movie-title">${movie.title}</p>
-        `;
+                // Adds movie image and title
+                movieCard.innerHTML = `
+                    <img src="${movie.movie_image_cover}" alt="${movie.title}">
+                    <p class="movie-title">${movie.title}</p>
+                `;
 
-        // Check if the movie has a description and add overlay
-        if (movie.description) {
-            const descriptionOverlay = document.createElement("div");
-            descriptionOverlay.classList.add("description-overlay");
-            descriptionOverlay.textContent = movie.description;
-            movieCard.appendChild(descriptionOverlay);
-        }
+                // Adds overlay for description (if exists)
+                if (movie.description) {
+                    const descriptionOverlay = document.createElement("div");
+                    descriptionOverlay.classList.add("description-overlay");
+                    descriptionOverlay.textContent = movie.description;
+                    movieCard.appendChild(descriptionOverlay);
+                }
 
-        // Check if the movie has a video URL and add a video player
-        if (movie.videoUrl) {
-            const videoPlayer = document.createElement("video");
-            videoPlayer.controls = true;
-            videoPlayer.src = movie.videoUrl;
-            videoPlayer.style.width = "100%";
-            videoPlayer.style.marginTop = "10px";
-            movieCard.appendChild(videoPlayer);
-        }
+                // Still trying to create an event listener to navigate to individual movies page
+                // You can try other ways. This one identifies the movienameId as saved for the filenames
+                movieCard.addEventListener("click", () => {
+                    console.log(`Navigating to: movie${movie.movieid}.html`);
+                    localStorage.setItem("selectedMovieId", movie.movieid);
+                    window.location.href = `movie${movie.movieid}.html`;
+                });
 
-        moviesRow.appendChild(movieCard);
-    });
+                moviesRow.appendChild(movieCard);
+            });
 
-    sectionDiv.appendChild(sectionTitle);
-    sectionDiv.appendChild(moviesRow);
-    container.appendChild(sectionDiv);
-});
-
+            sectionDiv.appendChild(sectionTitle);
+            sectionDiv.appendChild(moviesRow);
+            container.appendChild(sectionDiv);
+        });
     </script>
 </body>
 </html>

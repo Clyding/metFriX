@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MetFriX - Donreerer Move</title>
+    <title>MetFriX - Movie Description</title>
     <style>
         /* Basic Reset */
         body {
@@ -148,7 +148,6 @@
         }
     </style>
 </head>
-
 <body>
     <!-- Header -->
     <div class="header">
@@ -159,38 +158,47 @@
     </div>
 
     <!-- Movie Details Section -->
-    <div class="movie-details">
-        <img src="https://digitalt.tv/wp-content/uploads/imports/Dont-Move.jpg" alt="Don't Move" class="movie-image">
+    <div class="movie-details" id="1">
+        <img src="https://occ-0-7-6.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABfuBxwODJWGpnxkkB_o4u6261-94UU3qXviCR10RUPHt_t2aUmLdxZSf9Ya1QPVE-RSGPIFap0ktl5E9IzJCdmOleGJlBtkgbJ9w5m7dY_HIg34-vtCLyJn7oD0YolAl8jOJ.jpg?r=8a4" alt="moneyheist" class="movie-image">
 
-        <h1 class="movie-title">Don't Move</h1>
+        <h1 class="movie-title">moneyheist</h1>
         <p class="movie-info">
-            <strong>Year:</strong> 2024<br>
-            <strong>Duration:</strong> 1h 32m<br>
-            <strong>Rating:</strong> TV-MA<br>
-            <strong>Ranking:</strong> #4 in Movies Today
+            <strong>Year:</strong> 2017<br>
+            <strong>Duration:</strong> 5 seasons<br>
+            <strong>Rating:</strong> R<br>
+            <strong>Genre:</strong> thriller
         </p>
 
         <p class="movie-info">
-            How do you escape a twisted killer when you suddenly can't run or scream? Kelsey Asbille ("Yellowstone") and Finn Wittrock star in this chilling thriller.
+            Money Heist is a crime series about a group of thieves who plan to steal billions of euros from the Royal Mint of Spain
         </p>
 
         <p class="movie-info movie-cast">
-            <strong>Cast:</strong> Finn Wittrock, Kelsey Asbille, Moray Treadwell
+            <strong>Cast:</strong> Álvaro Morte as The Professor
+            Úrsula Corberó as Tokyo
+            Pedro Alonso as Berlin
+            Itziar Ituño as Lisbon (initially Inspector Raquel Murillo)
+            Miguel Herrán as Rio
+            Jaime Lorente as Denver
+            Alba Flores as Nairobi
+            Darko Perić as Helsinki
+            Esther Acebo as Stockholm (initially hostage Mónica Gaztambide)
+            Rodrigo de la Serna as Palermo
+            Hovik Keuchkerian as Bogotá
         </p>
 
         <p class="movie-info">
-            <strong>Director:</strong> Adam Schindler, Brian Netto
+            <strong>Director:</strong> ALex pina
         </p>
 
         <!-- Movie Trailer -->
         <div class="trailer">
             <h2>Watch the Trailer</h2>
-            <video controls>
-                <source src="/movies/dontmove.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/_InqQJRqGW4?si=9RcfKkLQq_frLjJ5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
     </div>
+
+    <!-- Review Section -->
     <div class="review-section">
         <h2>Leave Your Review</h2>
         <form id="reviewForm" class="review-form">
@@ -265,6 +273,7 @@
             selectedRating = 0;
             updateStars();
         });
-    </script>    
+    </script>
+
 </body>
 </html>

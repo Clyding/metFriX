@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MetFriX - Movie Description</title>
+    <title>MetFriX - Dead Cells</title>
     <style>
         /* Basic Reset */
         body {
@@ -43,33 +43,29 @@
         }
 
         /* Main Content Styles */
-        .movie-details {
+        .game-details {
             padding: 20px;
             max-width: 800px;
             margin: 0 auto;
         }
 
-        .movie-image {
+        .game-image {
             width: 100%;
             border-radius: 10px;
             margin-bottom: 20px;
             object-fit: cover;
         }
 
-        .movie-title {
+        .game-title {
             font-size: 2rem;
             margin-bottom: 10px;
             color: #e50914;
         }
 
-        .movie-info {
+        .game-info {
             font-size: 1rem;
             margin-bottom: 20px;
             line-height: 1.6;
-        }
-
-        .movie-cast {
-            margin-bottom: 10px;
         }
 
         .trailer {
@@ -157,36 +153,30 @@
         </div>
     </div>
 
-    <!-- Movie Details Section -->
-    <div class="movie-details">
-        <img src="https://m.media-amazon.com/images/I/61y3DfBfGdL._AC_UF894,1000_QL80_.jpg" alt="Oppenheimer" class="movie-image">
+    <!-- Game Details Section -->
+    <div class="game-details" id="dead-cells">
+        <img src="https://cdn.akamai.steamstatic.com/steam/apps/588650/header.jpg?t=1673263646" 
+             alt="Dead Cells" class="game-image">
 
-        <h1 class="movie-title">Oppenheimer</h1>
-        <p class="movie-info">
-            <strong>Year:</strong> 2023<br>
-            <strong>Duration:</strong> 3h 0m<br>
-            <strong>Rating:</strong> R<br>
-            <strong>Genre:</strong> Biography, Drama, History
+        <h1 class="game-title">Dead Cells</h1>
+        <p class="game-info">
+            <strong>Genre:</strong> Action, Roguelike<br>
+            <strong>Release Year:</strong> 2018<br>
+            <strong>Rating:</strong> T<br>
+            <strong>Developer:</strong> Motion Twin
         </p>
 
-        <p class="movie-info">
-            The story of American scientist J. Robert Oppenheimer and his role in the development of the atomic bomb. Based on the Pulitzer Prize-winning book "American Prometheus".
+        <p class="game-info">
+            Explore a sprawling, ever-changing castle in this critically acclaimed roguelike metroidvania. 
+            Dead Cells challenges you to master fast-paced combat, unlock powerful weapons, and adapt to punishing gameplay in a journey of discovery and survival.
         </p>
 
-        <p class="movie-info movie-cast">
-            <strong>Cast:</strong> Cillian Murphy, Emily Blunt, Matt Damon, Robert Downey Jr.
-        </p>
-
-        <p class="movie-info">
-            <strong>Director:</strong> Christopher Nolan
-        </p>
-
-        <!-- Movie Trailer -->
+        <!-- Game Trailer -->
         <div class="trailer">
             <h2>Watch the Trailer</h2>
             <video controls>
-                <source src="/movies/Oppenheimer _ Official Trailer.mp4" type="video/mp4">
-                Your browser does not support the video tags.
+                <source src="/trailers/dead_cells_trailer.mp4" type="video/mp4">
+                Your browser does not support the video tag.
             </video>
         </div>
     </div>
@@ -267,6 +257,5 @@
             updateStars();
         });
     </script>
-
 </body>
 </html>
