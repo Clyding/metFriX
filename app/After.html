@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MetFriX - Don't Move</title>
+    <style>
+        /* Basic Reset */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #141414;
+            color: #fff;
+        }
+
+        /* Header Styles */
+        .header {
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: black;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .logo {
+            height: 50px;
+        }
+
+        .profile {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .profile img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Main Content Styles */
+        .movie-details {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .movie-image {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            object-fit: cover;
+        }
+
+        .movie-title {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: #e50914;
+        }
+
+        .movie-info {
+            font-size: 1rem;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .movie-cast {
+            margin-bottom: 10px;
+        }
+
+        .trailer {
+            margin-top: 20px;
+        }
+
+        .trailer video {
+            width: 100%;
+            border-radius: 10px;
+        }
+        /* Review Section Styles */
+        .review-section {
+            margin-top: 40px;
+        }
+
+        .review-form {
+            margin-bottom: 20px;
+        }
+
+        .review-form textarea {
+            width: 100%;
+            height: 100px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            resize: none;
+        }
+
+        .rating {
+            margin-bottom: 10px;
+        }
+
+        .star {
+            font-size: 24px;
+            cursor: pointer;
+            color: #ccc;
+        }
+
+        .star.selected {
+            color: gold;
+        }
+
+        .submit-btn {
+            padding: 10px 20px;
+            background-color: #e50914;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background-color: #f40612;
+        }
+
+        .reviews-list {
+            margin-top: 20px;
+        }
+
+        .review-item {
+            background-color: #1c1c1c;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .review-rating {
+            color: gold;
+        }
+
+        .review-user {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <img src="/images/MetFriX.png" alt="MetFriX Logo" class="logo">
+        <div class="profile">
+            <img src="/images/michael.jpg" alt="User Profile">
+        </div>
+    </div>
+
+    <!-- Movie Details Section -->
+    <div class="movie-details">
+        <img src="https://occ-0-1175-299.1.nflxso.net/dnm/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABZluAolekEH4h1By3Std8dcNk8JovnP34H6kSYJ4BPChXbH2-hOqhMtqsu5DBiR5vshilHH6FdA8K5n8n0ZIiOiWhkHbX8Spl-LlW7EwHc8GiU5UQz5LBeUl6SkUOZtS-qhllDJg6T2vbcW-GjrzgixhwH4riuh4nssRAqVbIbNK0FpoU8C8pG_Xox26ItqZivERjc11PwrFqt-APPboT20i0BGR6ofbPdvV9lBHHrUBs_lv7Xq6OLb5-JpRxoLbmOaa6dIQX16sBD0XZujQ3hWxtXFypAnjo20uC-dtfJ9pk0tToI0FFYU0Pg.jpg" alt="The-After" class="movie-image">
+
+        <h1 class="movie-title">The-After</h1>
+        <p class="movie-info">
+            <strong>Year:</strong> 2023<br>
+            <strong>Duration:</strong>0h 18m<br>
+            <strong>Rating:</strong> Pg-13<br>
+            <strong>Ranking:</strong> #6 in Movies Today
+        </p>
+
+        <p class="movie-info">
+            After losing a family member to a violent crime, a shattered ride-share driver picks up a passenger who forces him to confront his grief.
+        </p>
+
+        <p class="movie-info movie-cast">
+            <strong>Cast:</strong> David Oyelowo as Dayo
+            Jessica Plummer as Amanda
+            Sule Rimi as Stewart
+            Izuka Hoyle as Emily
+            Amelie Dokubo as Laura
+            Ellen Francis as Rebecca
+            Nikesh Patel as Salman
+            Tara-Binta Collins as Amy
+            Dominique Tipper as Jessica
+            Ravi Singh as Krish
+            Ruth Sheen as Tabatha
+            Alan Williams as Fry
+            Dan Griffiths as Bandana Man
+        </p>
+
+        <p class="movie-info">
+            <strong>Director:</strong> Misan Harriman
+        </p>
+
+        <!-- Movie Trailer -->
+        <div class="trailer">
+            <h2>Watch the Trailer</h2>
+            <video controls>
+                <source src="/images/After.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class ="User-ratings">
+            <p>User ratings/reviews</p>
+            <p> add comments to the movie </p>
+            <p>Rate the movie out of five stars</p>
+            <p> add to watch later or favorite the movie</p>
+        </div>
+        <button onclick="myFunction()">Try it</button>
+        <div id="favorites">
+        Add to myfavorites
+       </div>
+       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="ipc-icon ipc-icon--add ipc-btn__icon ipc-btn__icon--pre" viewBox="0 0 24 24" fill="currentColor" role="presentation"><path d="M18 13h-5v5c0 .55-.45 1-1 1s-1-.45-1-1v-5H6c-.55 0-1-.45-1-1s.45-1 1-1h5V6c0-.55.45-1 1-1s1 .45 1 1v5h5c.55 0 1 .45 1 1s-.45 1-1 1z"></path></svg>
+       <span class="ipc-btn__text">Review</span>
+    </div>
+</body>
+</html>
