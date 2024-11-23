@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MetFriX | Movies</title>
+    <title>MetFriX - Movies</title>
     <style>
         /* Basic Reset */
         body {
@@ -125,6 +125,7 @@
     <div id="movies-container"></div>
 
     <script>
+        // Movie Data
         const moviesData = {
             "movies": [
                 {
@@ -171,43 +172,13 @@
                             ],
                             "director": "Christopher Nolan",
                             "ranking_text": "#1 in Movies Today"
-                        },
-                        {
-                            "movieid": "6",
-                            "movie_image_cover": "https://digitalt.tv/wp-content/uploads/imports/Dont-Move.jpg",
-                            "title": "Don't Move",
-                            "videoUrl": "http://commondatastorage.googleapis.com/gtv-vmovieideos-bucket/sample/ForBiggerFun.mp4",
-                            "year": "2024",
-                            "duration": "1h 32m",
-                            "rating": "TV-MA",
-                            "description": "How do you escape a twisted killer when you suddenly can't run or scream? Kelsey Asbille (\"Yellowstone\") and Finn Wittrock star in this chilling thriller.",
-                            "cast": [
-                                "Finn Wittrock",
-                                "Kelsey Asbille",
-                                "Moray Treadwell"
-                            ],
-                            "director": "Adam Schindler, Brian Netto",
-                            "ranking_text": "#4 in Movies Today"
-                        },
-                        {
-                            "movieid": "7",
-                            "movie_image_cover": "https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQXlHfX_1WN1bSiZv4jXieBsZbXRLNIUU9BPzv0Cohep2F2pmqrMzmWwRp7anXyBLRGhrBKMOuoAZoj9v8Si3-mJ6o2-5bc6o2YZtsJSIgpOiM4gcLAETYcGsppaorpaRaXWzgZBX5ftLz-15gi1mBNcD.jpg?r=77f",
-                            "title": "Dead Cells: MetFriX Edition",
-                            "genre": "Action"
-                        },
-                        {
-                            "movieid": "8",
-                            "movie_image_cover": "https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQcIeF6n2wF0YVb_qZZQnxFsky2xLQEGMq1zxnK5EbjY-3tJVS8YOOdYUzRvrEgBH1NV_Nw761AOTWdfs3vPFpBpjNnpwA148Tj-l4q3e_cCXRoRxMTM17W9t2VsY7QS7M3nTyUB9vbeRZnurR5q4oREQ.jpg?r=af2",
-                            "title": "Bowling Ballers",
-                            "genre": "Arcade"
-
                         },  
-
-                            ]
-                        }
+                    ]
+                }
             ]
         };
 
+        // Populate Movies
         const container = document.getElementById("movies-container");
 
         moviesData.movies.forEach(section => {
@@ -225,13 +196,13 @@
                 const movieCard = document.createElement("div");
                 movieCard.classList.add("movie-card");
 
-                // Adds movie image and title
+                // Add movie image and title
                 movieCard.innerHTML = `
                     <img src="${movie.movie_image_cover}" alt="${movie.title}">
                     <p class="movie-title">${movie.title}</p>
                 `;
 
-                // Adds overlay for description (if exists)
+                // Add overlay for description (if exists)
                 if (movie.description) {
                     const descriptionOverlay = document.createElement("div");
                     descriptionOverlay.classList.add("description-overlay");
@@ -239,8 +210,7 @@
                     movieCard.appendChild(descriptionOverlay);
                 }
 
-                // Still trying to create an event listener to navigate to individual movies page
-                // You can try other ways. This one identifies the movienameId as saved for the filenames
+                // Add event listener for click
                 movieCard.addEventListener("click", () => {
                     console.log(`Navigating to: movie${movie.movieid}.html`);
                     localStorage.setItem("selectedMovieId", movie.movieid);
