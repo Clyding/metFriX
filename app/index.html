@@ -51,7 +51,13 @@
         <form class="email-signup">
           <input autocomplete="email" minlength="5" maxlength="50" 
           type="email" id=":r0:" name="email" data-uia="field-email" value="" placeholder="Email address">
-          <button type="submit">Get Started</button>
+          <button id="sign-up" type="submit">Get Started</button>
+          <script>
+            document.getElementById("sign-up").onclick = function () {
+              window.location.href = "movies.html";
+            }
+          </script>
+
         </form>
         </div>
     </div>

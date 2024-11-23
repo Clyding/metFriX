@@ -27,8 +27,18 @@
                 <a href="#"><i class="fa fa-linkedin"></i></a>
                 <a href="#"><i class="fa fa-facebook"></i></a>
             </div>
-            <p><button>Friends</button></p>
-            <p><button>Movies Watched</button></p>
+            <p><button id="friends">Friends</button></p>
+            <script>
+                document.getElementById("friends").onclick = function() {
+                    window.location.href="friends.html";
+                }
+            </script>
+            <p><button id="movies-watched">Movies Watched</button></p>
+            <script>
+                document.getElementById("movies-watched").onclick = function () {
+                    windoe.loaction.href="movies-watched.html";
+                }
+            </script>
 
         </div>  
     </body>

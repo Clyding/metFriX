@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MetFriX - Profile</title>
+    <link rel="shortcut icon" href="/images/MFriX_Black.png">
+    <link rel="stylesheet" href="/styles/styles.css" />
+    <script src="/scripts/scripts.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <style>
+      /* Navigation Bar Styling */
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background-color: #333;
+        color: white;
+      }
+      nav img.logo {
+        width: 150px;
+      }
+      .language-btn {
+        background-color: #555;
+        color: white;
+        padding: 8px 12px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+
+      /* Profile Picture Styling */
+      .profile {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin: 20px auto;
+        display: block;
+      }
+
+      /* Profile Card Styling */
+      .profile-card {
+        max-width: 300px;
+        margin: 20px auto;
+        text-align: center;
+        background-color: #f9f9f9;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+      }
+      .profile-card img {
+        width: 100%;
+        border-radius: 10px;
+      }
+      .profile-card button {
+        background-color: #333;
+        color: white;
+        padding: 10px 15px;
+        margin: 10px 5px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      /* Friends Section Styling */
+      .friends-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+      .friends-card {
+        width: 250px;
+        text-align: center;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+      }
+      .friends-card img {
+        width: 100%;
+        border-radius: 10px;
+      }
+
+      /* Footer */
+      footer {
+        text-align: center;
+        padding: 10px;
+        background-color: #333;
+        color: white;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav>
+      <img src="/images/MetFriX.png" class="logo" />
+      <button class="language-btn">
+        English <img src="/images/down-icon.png" alt="" />
+      </button>
+    </nav>
+
+    <!-- User Profile -->
+    <h2 style="text-align:center">User's Profile</h2>
+    <div class="profile-card">
+      <img src="/images/clyde.JPG" alt="clyde" class="profile">
+      <h3>Name: Condensation Polymerization</h3>
+      <p class="title">Student</p>
+      <div style="margin: 24px 0;">
+        <a href="#"><i class="fa fa-dribbble"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+        <a href="#"><i class="fa fa-linkedin"></i></a>
+        <a href="#"><i class="fa fa-facebook"></i></a>
+      </div>
+      <p><button id="friends-btn" class="friends">Friends</button></p>
+      <p><button id="movies-watched-btn" class="movies-watched">Movies Watched</button></p>
+    </div>
+
+    <!-- Friends Section -->
+    <h2 style="text-align:center">Friends</h2>
+    <div class="friends-container">
+      <div class="friends-card">
+        <img src="/images/michael.jpg" alt="Mykelodeon">
+        <h3>Name: Mykelodeon</h3>
+        <p class="title">Wanted Thug</p>
+        <div>
+          <a href="#"><i class="fa fa-dribbble"></i></a>
+          <a href="#"><i class="fa fa-twitter"></i></a>
+          <a href="#"><i class="fa fa-linkedin"></i></a>
+          <a href="#"><i class="fa fa-facebook"></i></a>
+        </div>
+      </div>
+      <div class="friends-card">
+        <img src="/images/tiffs.JPEG" alt="Tiffany">
+        <h3>Name: Tiffany Holness</h3>
+        <p class="title">CS Major</p>
+        <div>
+          <a href="#"><i class="fa fa-dribbble"></i></a>
+          <a href="#"><i class="fa fa-twitter"></i></a>
+          <a href="#"><i class="fa fa-linkedin"></i></a>
+          <a href="#"><i class="fa fa-facebook"></i></a>
+        </div>
+      </div>
+      <div class="friends-card">
+        <img src="/images/oladuns.jpg" alt="Timothy">
+        <h3>Name: Timothy Oladunni</h3>
+        <p class="title">Professional Professor</p>
+        <div>
+          <a href="#"><i class="fa fa-dribbble"></i></a>
+          <a href="#"><i class="fa fa-twitter"></i></a>
+          <a href="#"><i class="fa fa-linkedin"></i></a>
+          <a href="#"><i class="fa fa-facebook"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      &copy; 2024 MetFriX. All rights reserved.
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+      document.getElementById("friends-btn").onclick = function () {
+        window.location.href = "friends.html";
+      };
+
+      document.getElementById("movies-watched-btn").onclick = function () {
+        window.location.href = "movies-watched.html";
+      };
+    </script>
+  </body>
+</html>
