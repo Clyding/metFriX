@@ -166,16 +166,16 @@
     <!-- Header -->
     <div class="header">
         <img src="/images/MetFriX.png" alt="MetFriX Logo" class="logo">
-        <div class="profile">
+        <a href="user.html" class="profile">
             <img src="/images/michael.jpg" alt="User Profile">
-        </div>
+        </a>
     </div>
 
     <!-- User Profile Container -->
     <div class="container">
         <!-- User Info -->
         <div class="user-info">
-            <img src="/images/michael.jpg" alt="User Profile Picture">
+            <img src="/images/michael.jpg" alt="User Profile Picture" id="profile-id">
             <h2>Michael Johnson</h2>
         </div>
 
@@ -225,82 +225,82 @@
                 <div class="review-movie">Interstellar</div>
                 <div class="review-rating">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
                 <p>Visually stunning and emotionally gripping. A must-watch!</p>
-                <!--TO DO: create a functionality to rate movies and adds to the database section once a movie is rated-->
             </div>
         </div>
-        <script>
-            // Add Friend Button Functionality
-            document.getElementById("add-friend").forEach((button) => {
-                button.addEventListener("click", function () {
-                    const friendName = this.parentNode.querySelector("span").textContent;
-                    console.log(`Added ${friendName} to friend-list.`);
-                    
-                    // Example AJAX request to update database
-                    fetch("/api/add-friend", {
-                        method: "POST",
-                        headers: { "Content-Type": "application/json" },
-                        body: JSON.stringify({ friend: friendName }),
-                    })
-                        .then((response) => {
-                            if (response.ok) {
-                                alert(`${friendName} has been added to your friends list.`);
-                            } else {
-                                console.error("Failed to add friend.");
-                            }
-                        });
-                });
-            });
         
-            // Remove Watched Movie Functionality
-            document.querySelectorAll(".movies .delete").forEach((button) => {
-                button.addEventListener("click", function () {
-                    const movieName = this.parentNode.querySelector("span").textContent;
-                    console.log(`Removed ${movieName} from watched list.`);
-                    
-                    // Example AJAX request to update database
-                    fetch("/api/remove-watched", {
-                        method: "POST",
-                        headers: { "Content-Type": "application/json" },
-                        body: JSON.stringify({ movie: movieName }),
-                    })
-                        .then((response) => {
-                            if (response.ok) {
-                                alert(`${movieName} has been removed from your watched list.`);
-                                this.parentNode.remove(); // Remove movie element from DOM
-                            } else {
-                                console.error("Failed to remove movie.");
-                            }
-                        });
-                });
-            });
-        
-            // Rate and Add Review Functionality
-            function addReview(movieName, rating, reviewText) {
-                console.log(`Adding review for ${movieName}: ${rating} stars - ${reviewText}`);
-        
-                // Example AJAX request to add review to database
-                fetch("/api/add-review", {
+    </div>
+
+    <script>
+        // Add Friend Button Functionality
+        document.getElementById("add-friend").forEach((button) => {
+            button.addEventListener("click", function () {
+                const friendName = this.parentNode.querySelector("span").textContent;
+                console.log(`Added ${friendName} to friend-list.`);
+
+                // Example AJAX request to update database
+                fetch("/api/add-friend", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({
-                        movie: movieName,
-                        rating: rating,
-                        review: reviewText,
-                    }),
+                    body: JSON.stringify({ friend: friendName }),
                 })
                     .then((response) => {
                         if (response.ok) {
-                            alert(`Your review for ${movieName} has been added.`);
+                            alert(`${friendName} has been added to your friends list.`);
                         } else {
-                            console.error("Failed to add review.");
+                            console.error("Failed to add friend.");
                         }
                     });
-            }
-        
-            // Example usage of addReview function
-            addReview("Oppenheimer", 5, "An incredible portrayal of Oppenheimer's life!");
-        </script>
-        
-    </div>
+            });
+        });
+
+        // Remove Watched Movie Functionality
+        document.querySelectorAll(".movies .delete").forEach((button) => {
+            button.addEventListener("click", function () {
+                const movieName = this.parentNode.querySelector("span").textContent;
+                console.log(`Removed ${movieName} from watched list.`);
+
+                // Example AJAX request to update database
+                fetch("/api/remove-watched", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ movie: movieName }),
+                })
+                    .then((response) => {
+                        if (response.ok) {
+                            alert(`${movieName} has been removed from your watched list.`);
+                            this.parentNode.remove(); // Remove movie element from DOM
+                        } else {
+                            console.error("Failed to remove movie.");
+                        }
+                    });
+            });
+        });
+
+        // Rate and Add Review Functionality
+        function addReview(movieName, rating, reviewText) {
+            console.log(`Adding review for ${movieName}: ${rating} stars - ${reviewText}`);
+
+            // Example AJAX request to add review to database
+            fetch("/api/add-review", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    movie: movieName,
+                    rating: rating,
+                    review: reviewText,
+                }),
+            })
+                .then((response) => {
+                    if (response.ok) {
+                        alert(`Your review for ${movieName} has been added.`);
+                    } else {
+                        console.error("Failed to add review.");
+                    }
+                });
+        }
+
+        // Example usage of addReview function
+        addReview("Oppenheimer", 5, "An incredible portrayal of Oppenheimer's life!");
+    </script>
 </body>
 </html>
