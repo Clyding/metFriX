@@ -2,32 +2,34 @@ const pool = require("./connect");
 
 async function addToMoviesWatched(username, movieId) {
     const sqlCheck = 
-    'SELECT 1 FROM MoviesWatched WHERE username = ? AND movieId = ?;';
+        'SELECT 1 FROM MoviesWatched WHERE Username = ? AND MovieID = ?;';
 
     const sqlInsert = 
-    'INSERT INTO MoviesWatched (Username, MovieID) VALUES (?, ?);';
+        'INSERT INTO MoviesWatched (Username, MovieID) VALUES (?, ?);';
 
     try {
+        // Get a connection from the pool
         const connection = await pool.getConnection();
 
+        // Check if the movie already exists for the user
         const [rows] = await connection.execute(sqlCheck, [username, movieId]);
 
-        if (rows.length == 0) {
+        if (rows.length === 0) {
+            // If not found, insert the movie into MoviesWatched
             await connection.execute(sqlInsert, [username, movieId]);
-
-            console.log('Added movieID ${movieId} for ${username}.');
+            console.log(`Added MovieID ${movieId} for user ${username}.`);
         } else {
-            console.log('Movie ID ${movieId} already exists for user ${username}.');
+            console.log(`MovieID ${movieId} already exists for user ${username}.`);
         }
 
-        connection.release()
+        // Release the connection back to the pool
+        connection.release();
+    } catch (error) {
+        // Log the error message
+        console.error("Error adding movie to the watched list:", error.message);
+    } finally {
+        connection.release();
     }
-
-    catch (error) {
-        console.error ("Error adding Movies to the WatchedList:", error);
-        
-    }
-
-    
-
 }
+
+module.exports = addToMoviesWatched;
